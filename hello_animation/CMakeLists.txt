@@ -12,6 +12,7 @@ if (POLICY CMP0072)
 endif()
 # OpenGL
 find_package(OpenGL REQUIRED)
+find_package (glfw3 REQUIRED)
 
 # Declare the executable target built from your sources
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -56,10 +57,12 @@ add_executable(hello_animation
 	${project_sources} 
     ${project_headers}
 )
-target_include_directories(hello_animation
-    PRIVATE 
-        ${PROJECT_SOURCE_DIR}/include
+
+include_directories(
+    ${PROJECT_SOURCE_DIR}/include
+    ${glfw_INCLUDE_DIRS} 
 )
+
 target_link_libraries(hello_animation
     glfw3
     GL
@@ -70,4 +73,5 @@ target_link_libraries(hello_animation
     Xi
     dl
     assimp)
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
