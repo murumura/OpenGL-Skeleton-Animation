@@ -61,7 +61,7 @@ target_include_directories(hello_animation
         ${PROJECT_SOURCE_DIR}/include
 )
 target_link_libraries(hello_animation
-    glfw
+    glfw3
     GL
     GLU 
     X11
