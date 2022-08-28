@@ -31,7 +31,19 @@ $ make
 $ ./hello_animation
 ```
 
-# Screen Shot
+## Troubleshooting
+In the case that a library isn't found, for example `libassimp.so.5`, you will probably see an error
+like this one:
+```sh
+hello_animation: error while loading shared libraries: libassimp.so.5: cannot open shared object file: No such file or directory
+```
+
+Make sure you have installed Assimp with CMake and set your `$LD_LIBRARY_PATH` environment variable.
+```sh
+$ export LD_LIBRARY_PATH=/usr/local/lib
+```
+
+# Screenshot
 ![Image](result/result.gif)
 # Features
 
